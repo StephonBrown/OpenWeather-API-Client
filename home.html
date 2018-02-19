@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="pageTitle" class="display-3"> Open Weather API Client</h1>
+    </div>
+    <hr/>
+    <div class="container">
+        <ul class="list-group" id="errorMessagesDiv"></ul>
+    </div>
+    <hr/>
+
+    <div class="container" id="buttonsDiv">
+        <div class=" row offset-md-3">
+            <form class="form-inline">
+                <label for="zipCodeSearchBox" class="control-label" style="padding-right: 5px">Zipcode:</label>
+                <div style="padding-right: 10px">
+                    <input type="number" id="zipCodeSearchBox" placeholder="Enter Zipcode" required></input>
+                </div>
+
+                <label for="unitSelector" style="padding-right: 5px">Unit:</label>
+                <div style="padding-right: 10px">
+                    <select class="form control custom-select"  id="unitSelector">
+                        <option value="metric">Metric</option>
+                        <option value="imperial" selected="selected">Imperial</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn btn-secondary" id="getWeatherButton">Get Weather</button>
+            </form>
+        </div>
+    </div>
+    <hr/>
+
+    <div id="currentConditionsDiv" class="container" style="display:none">
+        <div class="row">
+            <h1 id="cityName"></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                    <div id='iconHeading'></div>    
+            </div>
+            <div class="col-md-6">
+                <p id="cityTemperatureP"></p>
+                <p id="humidityP"></p>
+                <p id="windP"></p>
+            </div>
+        </div>
+        <hr/>
+    </div>
+
+
+    <div class="container" id="fiveDayForecastDiv" style="display:none">
+            <div class="row">
+                    <h1>Five Day Forecast</h1>
+            </div>
+            <div class="row">
+                <div id="day1Div" class="offset-md-1 col-md-2">
+                </div>
+                <div id="day2Div" class="col-md-2">
+                </div>
+                <div  id="day3Div" class="col-md-2">
+                </div>
+                <div id="day4Div" class="col-md-2">
+                </div> 
+                <div id="day5Div" class="col-md-2">
+                </div>                    
+            </div>
+            <hr/>
+    </div>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>
